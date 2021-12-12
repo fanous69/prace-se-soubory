@@ -1,5 +1,7 @@
 from random import randint, choice
 
+
+
 def pocitadlo(soubor):
     try:
         f = open(soubor, "r")
@@ -117,18 +119,18 @@ def zvetsovac(soubor):
     fB.close()
 
 def menu():
-    soubor = input("Zadej jmeno souboru: ")
+    soubor = input("Zadejte prosím název souboru: ")
     print("""
-    1) - převod na malá písmena
-    2) - převod na velké písmena
-    3) - změna znaku
-    4) - generátor nádhodného textu
-    5) - počitadlo písmen
+    1) převede na malá písmena
+    2) převede na velká písmena
+    3) změna znaku
+    4) generátor náhodného textu
+    5) počitadlo písmen
     ENTER - Konec
     """)
     
     try:
-        cinnost = int(input("Zadej co chceš provést: "))
+        cinnost = int(input("Zadejte co chcete provést: "))
     except:
         print("Neplatná volba!")
         exit(1)
@@ -138,8 +140,8 @@ def menu():
     elif cinnost == 2:
         zvetsovac(soubor)
     elif cinnost == 3:
-        znakA = input("Zadej znak který bude změněn: ")
-        znakB = input(f"Zadej znak na který se bude {znakA} měnit: ")
+        znakA = input("Zadejte znak který bude změněn: ")
+        znakB = input(f"Zadejte znak na který se bude {znakA} měnit: ")
         if znakA == "" or znakB == "":
             menic(soubor)
         else:
@@ -147,9 +149,9 @@ def menu():
     elif cinnost == 4:
         try:
             minvet = int(input("Minimální počet vět: "))
-            maxvet = int(input("Zadej Maximální počet vět: "))
+            maxvet = int(input("Zadejte Maximální počet vět: "))
         except:
-            print("Musíš zadat celé číslo")
+            print("Musíte zadat celé číslo")
             exit(1)
         generator(soubor, minvet, maxvet)
     elif cinnost == 5:
@@ -160,7 +162,7 @@ def menu():
 while True:
     menu()
     try:
-        pokracovat = int(input("Chceš pokračovat dál?(1/0): "))
+        pokracovat = int(input("Chcete pokračovat dál?(1/0): "))
     except:
         break
     if pokracovat == 1:
